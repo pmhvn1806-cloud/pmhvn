@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Chào mừng mọi người đến với trang Flask của tôi!</h1>
+        <nav>
+            <a href="/">Trang chủ</a>
+            <a href="/about">Giới thiệu</a>
+            <a href="/contact">Liên hệ</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="font-size: 40px;">Chào mừng bạn đã đến với web của tôi!</h2>
+        <p style="font-size: 20px;">Đây là trang web đầu tiên tôi tự tay làm.</p>
+        <p style="font-size: 20px;">trang web này giới thiệu về bản thân tôi</p>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
