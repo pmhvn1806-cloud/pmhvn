@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chúc mừng Ngày Nhà Giáo Việt Nam</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Canvas cho pháo hoa -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <div class="container">
+    <header>
+      <h1 class="marquee">🌸 Chúc mừng Ngày Nhà giáo Việt Nam - 20/11 🌸</h1>
+      <h2 class="teacher">Gửi: <span id="teacher-name">{{ teacher }}</span></h2>
+    </header>
+
+    <main class="card">
+      <div class="card-left">
+        <img src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='%23ffecd2'/><stop offset='1' stop-color='%23fcb69f'/></linearGradient></defs><rect fill='url(%23g)' width='100%' height='100%'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='28' fill='%23444'>Lời chúc 20/11</text></svg>" alt="Thầy/Cô" class="teacher-image">
+      </div>
+
+      <div class="card-right">
+        <p id="message">{{ message }}</p>
+
+        <!-- Form nhỏ để gõ message (không lưu lâu, chỉ hiển thị tạm) -->
+        <form method="post" class="msg-form">
+          <textarea name="message" placeholder="Viết lời chúc..." maxlength="500"></textarea>
+          <button type="submit">Cập nhật lời chúc</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <p>From: <strong>Bạn</strong> — <small>Ngày Nhà giáo Việt Nam 20/11</small></p>
+    </footer>
+  </div>
+
+  <!-- Khối để thêm rất nhiều petals (được tạo bằng JS) -->
+  <div id="petal-root"></div>
+
+  <script src="{{ url_for('static', filename='fireworks.js') }}"></script>
+
+  <!-- Script nhỏ để tự động tạo petals bằng DOM -->
+  <script>
+    // Tạo petals rơi
+    const petalRoot = document.getElementById('petal-root');
+    const PETAL_COUNT = 18;
+    for (let i=0;i<PETAL_COUNT;i++){
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.style.left = Math.random()*100 + 'vw';
+      petal.style.animationDelay = (Math.random()*5) + 's';
+      petal.style.opacity = (0.6 + Math.random()*0.4);
+      petalRoot.appendChild(petal);
+    }
+
+    // Marquee text animation (looping)
+    const marquee = document.querySelector('.marquee');
+    // no extra JS needed; pure CSS handles animation
+  </script>
+</body>
+</html>
