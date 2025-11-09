@@ -1,4 +1,5 @@
-from flask import Flask, request, Markup
+from flask import Flask, request
+from markupsafe import Markup
 
 app = Flask(__name__)
 
@@ -176,3 +177,4 @@ footer{{margin-top:16px;color:#6b6b6b}}
 
 if __name__ == "__main__":
     app.run(debug=True)
+
