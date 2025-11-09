@@ -121,12 +121,11 @@ footer{{margin-top:16px;color:#6b6b6b}}
     <div class="card-left">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Vietnamese_teacher_day_20-11.jpg"
            alt="Thầy/Cô" class="teacher-image">
+           default_message = "Chúc thầy/cô 8386"
            </div>
               <div class="card-right">
       <p id="message">{message}</p>
       <form method="post" class="msg-form">
-        <textarea name="message" placeholder="có thể viết ví dụ như: " chúc cô 8386 "" maxlength="500"></textarea>
-        <button type="submit">Cập nhật lời chúc</button>
       </form>
     </div>
   </main>
@@ -178,4 +177,5 @@ footer{{margin-top:16px;color:#6b6b6b}}
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
